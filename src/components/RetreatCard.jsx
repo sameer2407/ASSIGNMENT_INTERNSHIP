@@ -2,9 +2,11 @@ import { RiMoneyDollarBoxFill } from "react-icons/ri";
 import { CiCalendarDate } from "react-icons/ci";
 import { MdLocationPin } from "react-icons/md";
 import React from "react";
+import { GiDuration } from "react-icons/gi";
 
 const RetreatCard = ({ retreat }) => {
-  const { title, description, date, location, price, image } = retreat;
+  const { title, description, date, location, price, image, duration } =
+    retreat;
 
   const formattedDate = new Date(date * 1000).toLocaleDateString("en-US", {
     day: "numeric",
@@ -26,6 +28,9 @@ const RetreatCard = ({ retreat }) => {
       </div>
       <div className="text-gray-600 mb-2 flex items-center">
         <MdLocationPin className="mr-2 text-lg" /> <span>{location}</span>
+      </div>
+      <div className="text-gray-600 mb-2 flex items-center">
+        <GiDuration className="mr-2 text-lg" /> <span>{duration} days</span>
       </div>
       <div className="text-gray-800 font-semibold flex items-center">
         <RiMoneyDollarBoxFill className="mr-2 text-lg" /> <span>${price}</span>
